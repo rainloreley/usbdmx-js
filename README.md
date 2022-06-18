@@ -1,4 +1,4 @@
-# usbdmx.js
+# usbdmx-js
 
 Node.js library for the FX5 DMX and Digital Enlightenment USB Interface.<br/>
 Code based on the [FX5 usbdmx driver](https://github.com/fx5/usbdmx) (uses [node-hid](https://github.com/node-hid/node-hid) for USB/HID communication)
@@ -8,7 +8,7 @@ Code based on the [FX5 usbdmx driver](https://github.com/fx5/usbdmx) (uses [node
 ### Get connected DMX interfaces
 
 ```ts
-import { getConnectedInterfaces } from "usbdmx.js";
+import { getConnectedInterfaces } from "usbdmx-js";
 var interfaces = getConnectedInterfaces();
 ```
 
@@ -27,7 +27,7 @@ This will return an array of objects, which looks like this:
 There are two ways to open the interface, which basically to the same thing. You need the `path` key from `getConnectedInterfaces` for this step.
 
 ```ts
-import { DMXInterface } from "usbdmx.js";
+import { DMXInterface } from "usbdmx-js";
 
 const path = "foo"
 const fx5 = new DMXInterface(path);
@@ -51,7 +51,7 @@ The FX5/Digital Enlightenment Interface provides multiple modes for operation:
 In standby mode, the status indicator LED on the device is turned off. Upon setting a different mode, it will turn on
 
 ```ts
-import { DMXInterface } from "usbdmx.js"
+import { DMXInterface } from "usbdmx-js"
 
 const mode = 6;
 
