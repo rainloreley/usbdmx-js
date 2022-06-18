@@ -1,6 +1,22 @@
 {
   "name": "usbdmx-js",
   "version": "1.0.0",
+  "description": "Node.js library for the FX5 USB DMX Interface",
+  "keywords": ["dmx", "usbdmx", "fx5", ""],
+  "homepage": "https://github.com/rainloreley/usbdmx-js#readme",
+  "bugs": {
+    "url": "https://github.com/rainloreley/usbdmx-js/issues",
+    "email": "adrian@abmgrt.dev"
+  },
+  "author": {
+    "name": "Adrian Baumgart",
+    "email": "adrian@abmgrt.dev",
+    "url": "https://abmgrt.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rainloreley/usbdmx-js"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
