@@ -16,9 +16,9 @@ This will return an array of objects, which looks like this:
 
 ```json
 {
-  "vid": Vendor ID (number),
-  "pid": Product ID (number),
-  "path": System Path to HID device (string)
+  "vid": "[Vendor ID (number)]",
+  "pid": "[Product ID (number)]",
+  "path": "[System Path to HID device (string)]"
 }
 ```
 
@@ -71,8 +71,8 @@ To write data, the `DMXInterface` class provides a `write` function. It takes an
 
 ```json
 {
-  "channel": DMX channel (1-512; number),
-  "value": DMX value (0-255; number)
+  "channel": "[DMX channel (1-512; number)]",
+  "value": "[DMX value (0-255; number)]"
 }
 ```
 
