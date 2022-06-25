@@ -126,9 +126,15 @@ fx5.close();
 
 - Sets the Interface mode to the provided mode number
 
-#### `write = (data: DMXCommand[]): number`
+#### `write = (data: DMXCommand[] | undefined): number`
 
 - Writes the provided data array to the dmx output
+- If data is undefined, the current output is written again
+
+#### `writeMap = (array: number[]): number`
+
+- Write an array of 512 values (each entry is for a channel in the universe; sorted by channel)
+- If you want to write a lot of data, this method is faster because it skips looping through the data and updating the output list which `write` does
 
 #### `dataCallback: (value: DMXCommand) => void`
 

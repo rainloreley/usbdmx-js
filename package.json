@@ -1,6 +1,6 @@
 {
   "name": "usbdmx-js",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Node.js library for the FX5 USB DMX Interface",
   "keywords": ["dmx", "usbdmx", "fx5", ""],
   "homepage": "https://github.com/rainloreley/usbdmx-js#readme",

@@ -6,6 +6,7 @@ Return codes
 * 1: invalid channel
 * 2: invalid value
 * 3: invalid mode
+* 4: invalid array size
 */
 
 class DMXInterface {
@@ -80,19 +81,22 @@ class DMXInterface {
         return 0;
     }
 
-    write = (data: DMXCommand[]): number => {
+    write = (data: DMXCommand[] | undefined): number => {
         let returnStatus = 0;
-        // update dmx out array with new values
-        for (var _entry of data) {
-            if (_entry.channel < 1 || _entry.channel > 512) {
-                returnStatus = 1;
-                continue;
+
+        if (data !== undefined) {
+            // update dmx out array with new values
+            for (var _entry of data) {
+                if (_entry.channel < 1 || _entry.channel > 512) {
+                    returnStatus = 1;
+                    continue;
+                }
+                if (_entry.value < 0 || _entry.value > 255) {
+                    returnStatus = 2;
+                    continue;
+                }
+                this.dmxout[_entry.channel - 1] = _entry.value
             }
-            if (_entry.value < 0 || _entry.value > 255) {
-                returnStatus = 2;
-                continue;
-            }
-            this.dmxout[_entry.channel - 1] = _entry.value
         }
 
         // loop through the 16 "pages" of commands (each write command can hold 32 channels)
@@ -113,6 +117,14 @@ class DMXInterface {
         return returnStatus;
 
     }
+
+    writeMap = (array: number[]): number => {
+        if (array.length !== 512) return 4;
+        this.dmxout = array;
+        this.write(undefined);
+        return 0;
+    }
+
 }
 
 interface DMXCommand {
