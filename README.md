@@ -1,7 +1,17 @@
 # usbdmx-js
 
+[![npm version](https://badge.fury.io/js/usbdmx-js.svg)](https://badge.fury.io/js/usbdmx-js)
+
 Node.js library for the FX5 DMX and Digital Enlightenment USB Interface.<br/>
 Code based on the [FX5 usbdmx driver](https://github.com/fx5/usbdmx) (uses [node-hid](https://github.com/node-hid/node-hid) for USB/HID communication)
+
+## Installation
+
+The package is available on npm and can be installed like this:
+
+```
+npm install usbdmx-js
+```
 
 ## Usage
 
